@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CitySearchView" customModule="weather" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="3el-Eu-rkR">
+                    <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F5Y-7l-BI9">
+                    <rect key="frame" x="129.5" y="200" width="155" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ifa-96-7rU">
+                            <rect key="frame" x="0.0" y="0.0" width="155" height="50"/>
+                        </button>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tfm-ky-zUk">
+                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="0HI-VF-1C1"/>
+                                <constraint firstAttribute="width" constant="50" id="SYR-eG-okz"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veD-xu-TN8">
+                            <rect key="frame" x="58" y="0.0" width="97" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSW-bX-4rt">
+                            <rect key="frame" x="58" y="29" width="97" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="Ifa-96-7rU" firstAttribute="leading" secondItem="F5Y-7l-BI9" secondAttribute="leading" id="1sG-0a-XLa"/>
+                        <constraint firstAttribute="bottom" secondItem="tfm-ky-zUk" secondAttribute="bottom" id="29a-GW-eDy"/>
+                        <constraint firstItem="veD-xu-TN8" firstAttribute="leading" secondItem="tfm-ky-zUk" secondAttribute="trailing" constant="8" id="49A-A7-G6r"/>
+                        <constraint firstItem="FSW-bX-4rt" firstAttribute="top" secondItem="veD-xu-TN8" secondAttribute="bottom" constant="8" id="GYs-WS-Dij"/>
+                        <constraint firstItem="veD-xu-TN8" firstAttribute="top" secondItem="F5Y-7l-BI9" secondAttribute="top" id="MVH-hJ-Xjy"/>
+                        <constraint firstItem="tfm-ky-zUk" firstAttribute="leading" secondItem="F5Y-7l-BI9" secondAttribute="leading" id="OLj-Xu-TBh"/>
+                        <constraint firstAttribute="trailing" secondItem="FSW-bX-4rt" secondAttribute="trailing" id="bLz-si-7Vb"/>
+                        <constraint firstAttribute="trailing" secondItem="veD-xu-TN8" secondAttribute="trailing" id="bf2-4c-PGo"/>
+                        <constraint firstItem="FSW-bX-4rt" firstAttribute="leading" secondItem="tfm-ky-zUk" secondAttribute="trailing" constant="8" id="cBa-kh-Rgh"/>
+                        <constraint firstAttribute="bottom" secondItem="Ifa-96-7rU" secondAttribute="bottom" id="gQt-AT-mHe"/>
+                        <constraint firstAttribute="trailing" secondItem="Ifa-96-7rU" secondAttribute="trailing" id="hwK-rj-lKo"/>
+                        <constraint firstItem="Ifa-96-7rU" firstAttribute="top" secondItem="F5Y-7l-BI9" secondAttribute="top" id="pc2-JA-UXh"/>
+                        <constraint firstItem="tfm-ky-zUk" firstAttribute="top" secondItem="F5Y-7l-BI9" secondAttribute="top" id="tY4-z1-ylU"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="3el-Eu-rkR" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="6hk-Wj-GW3"/>
+                <constraint firstItem="F5Y-7l-BI9" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="RWO-ak-kKU"/>
+                <constraint firstItem="3el-Eu-rkR" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="U37-yN-LfU"/>
+                <constraint firstAttribute="trailing" secondItem="3el-Eu-rkR" secondAttribute="trailing" id="UQR-Df-FwH"/>
+                <constraint firstItem="F5Y-7l-BI9" firstAttribute="top" secondItem="3el-Eu-rkR" secondAttribute="bottom" constant="100" id="fLs-YW-vfP"/>
+            </constraints>
+            <connections>
+                <outlet property="additionalInfo" destination="Ifa-96-7rU" id="FyI-of-PzL"/>
+                <outlet property="cityName" destination="veD-xu-TN8" id="dcS-h8-iii"/>
+                <outlet property="cityTemperature" destination="FSW-bX-4rt" id="T6B-cK-15q"/>
+                <outlet property="searchBar" destination="3el-Eu-rkR" id="hC6-Wi-anU"/>
+                <outlet property="weatherIcon" destination="tfm-ky-zUk" id="uj4-U1-t0w"/>
+            </connections>
+            <point key="canvasLocation" x="-26.086956521739133" y="53.571428571428569"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
