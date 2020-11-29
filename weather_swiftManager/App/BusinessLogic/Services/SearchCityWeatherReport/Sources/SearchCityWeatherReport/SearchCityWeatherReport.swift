@@ -9,6 +9,7 @@ import Foundation
 import Alamofire
 import RxSwift
 import ErrorHandler
+import MementoNSCache
 
 public protocol FetchWeatherReportProtocol {
 	var errorParser: SearchCityErrorParser { get }
@@ -18,8 +19,8 @@ public protocol FetchWeatherReportProtocol {
 //let cacher = ResponseCacher(behavior: .cache)
 //https://github.com/Alamofire/Alamofire/blob/master/Documentation/AdvancedUsage.md#cachedresponsehandler
 //URLCache
-private let responseCache = NSCache<NSString, AnyObject>()
 public class CityWeatherReportService<T: Codable & AnyObject> {
+    private let responseCache = NSCache<NSString, AnyObject>()
 	
 	private let weathermapPathString = "http://api.openweathermap.org/data/2.5/forecast"
 	private let appID = "ab77220aa6b309a18c2836899513f35e"
@@ -37,10 +38,10 @@ public class CityWeatherReportService<T: Codable & AnyObject> {
 											 "mode" : "JSON",
 											 "units" : "metric"]
 
-		return Single<T>.create { single in
+		return Single<T>.create { [weak self] single in
 			
 			// response from cache
-			if let responseFromCache = responseCache.object(forKey: city as NSString ) as? T {
+            if let responseFromCache = self?.responseCache.object(forKey: city as NSString ) as? T {
 				single(.success(responseFromCache))
 			} else {
 				AF.request(url, method: .get, parameters: parameters)
@@ -49,11 +50,11 @@ public class CityWeatherReportService<T: Codable & AnyObject> {
 						case let .success(success):
 							// response into cache
 							DispatchQueue.main.async {
-								responseCache.setObject(success, forKey: city as NSString)
+                                self?.responseCache.setObject(success, forKey: city as NSString)
 								single(.success(success))
 							}
 						case let .failure(error):
-							self.errorParser.parser(searchCityError: error)
+							self?.errorParser.parser(searchCityError: error)
 						}
 					}
 			}

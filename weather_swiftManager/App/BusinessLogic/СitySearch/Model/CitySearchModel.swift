@@ -10,6 +10,8 @@ import Alamofire
 import RxSwift
 import RxCocoa
 
+import MementoNSCache
+
 class CityWeatherReport: Codable {
 	let cod: String
 	let list: [List]
