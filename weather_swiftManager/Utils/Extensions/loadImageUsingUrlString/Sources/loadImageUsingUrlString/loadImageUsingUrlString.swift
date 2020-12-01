@@ -11,7 +11,7 @@ import Alamofire
 let imageCache = NSCache<NSString, AnyObject>()
 public extension UIImageView {
 
-	public func loadImageUsingUrlString(urlString: String) {
+    func loadImageUsingUrlString(urlString: String) {
 		image = nil
 
 		if urlString.isEmpty { return }
